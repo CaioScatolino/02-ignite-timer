@@ -21,9 +21,7 @@ height: 40px;
 margin: 8px;
 border-radius: 8px;
 
-border: 1px solid ${props => props.theme.secondary};
-
-background-color: ${props => props.theme.primary} ;
+background-color: ${props => props.theme["green-700"]} ;
 color: ${props => props.theme.white};
 
 /* ${props => {
