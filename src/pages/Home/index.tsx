@@ -39,7 +39,12 @@ export function Home() {
     },
   })
 
-  const { handleSubmit, /* reset, */ watch } = newCycleForm
+  const { handleSubmit, reset, watch } = newCycleForm
+
+  function handleCreateNewCycle(data: newCycleFormData) {
+    createNewCycle(data)
+    reset()
+  }
 
   // observar o campo de task em tempo real com o watch
   const task = watch('task')
@@ -47,7 +52,7 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(createNewCycle)}>
+      <form onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
